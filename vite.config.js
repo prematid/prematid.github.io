@@ -5,4 +5,7 @@ import react from '@vitejs/plugin-react-swc'
 export default defineConfig({
   base: '/prematid.github.io/',
   plugins: [react()],
+  build: {
+    outDir: 'dist', // This should point to the 'dist' folder
+},
 })
