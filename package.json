@@ -11,7 +11,7 @@
     "preview": "vite preview",
     "clean": "rm -rf dist",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b main -d dist"
+    "deploy": "gh-pages -b deployment -d dist"
   },
   "dependencies": {
     "@tsparticles/engine": "^3.5.0",
