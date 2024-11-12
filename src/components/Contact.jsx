@@ -1,5 +1,5 @@
 // src/components/Contact.jsx
-import { useState, useCallback } from 'react';
+import { useCallback } from 'react';
 import { motion } from 'framer-motion';
 import Particles from '@tsparticles/react';
 import { loadSlim } from '@tsparticles/slim';
@@ -37,16 +37,16 @@ const particleOptions = {
 };
 
 const Contact = () => {
-    const [loading, setLoading] = useState(false);
+    // const [loading, setLoading] = useState(false);
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        setLoading(true);
-        setTimeout(() => {
-            setLoading(false);
-            alert('Message Sent!');
-        }, 2000);
-    };
+    // const handleSubmit = (e) => {
+    //     e.preventDefault();
+    //     setLoading(true);
+    //     setTimeout(() => {
+    //         setLoading(false);
+    //         alert('Message Sent!');
+    //     }, 2000);
+    // };
 
     const particlesInit = useCallback(async (engine) => {
         console.log("Particles Engine Init");
@@ -102,7 +102,7 @@ const Contact = () => {
                     </p>
                 </div>
 
-                <form
+                {/* <form
                     onSubmit={handleSubmit}
                     className="flex flex-col items-center bg-gradient-to-r from-pink-100 to-orange-50 p-8 rounded-lg shadow-lg w-full max-w-lg mx-auto"
                 >
@@ -162,7 +162,7 @@ const Contact = () => {
                             "Send Message"
                         )}
                     </motion.button>
-                </form>
+                </form> */}
             </motion.div>
         </section>
     );
