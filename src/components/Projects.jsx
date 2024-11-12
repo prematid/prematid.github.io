@@ -4,29 +4,27 @@ import { motion } from 'framer-motion';
 import PropTypes from 'prop-types';
 
 const projects = [
-    { title: 'Blogging WebSite', description: 'A blogging website', link: 'https://zimpler.in', cta: 'Visit Website' },
+    { title: 'Zimpler.in: Blogging WebSite', description: 'A blogging website to deliver crisp and insightful information. Say goodbye to cluttered information and hello to simplicity.', link: 'https://zimpler.in', cta: 'Visit Website' },
     { title: 'Realtime Chat App', description: 'A real-time chat application implemented with React, Golang & firestore', link: 'https://chat.zimpler.in', cta: 'Visit Website' },
-    { title: 'Online Games', description: 'Online games with leaderboard', link: 'https://chat.zimpler.in/games', cta: 'Visit Website' },
+    { title: 'Online Games', description: 'Online games with leaderboard. Developed in React & Golang and uses firestore to maintain the games data. Try Now.', link: 'https://chat.zimpler.in/games', cta: 'Visit Website' },
 ];
 
 const ProjectCard = ({ project }) => {
     return (
         <motion.div
             whileHover={{ rotateY: 10, scale: 1.05 }}
-            className="relative p-6 bg-gradient-to-r from-pink-100 to-orange-50 rounded-lg shadow-lg transition-transform duration-300 max-w-sm mx-auto"
+            className="relative p-6 bg-gradient-to-r from-pink-100 to-orange-50 rounded-lg shadow-lg transition-transform duration-300 max-w-sm w-full md:w-80 min-h-64 mx-auto flex flex-col justify-between"
         >
-            <div className="absolute inset-0 bg-white rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <div className="relative z-10">
-                {/* {project?.image && (
-                    <img src={project.image} alt={project.title} className="w-full h-40 object-cover rounded-lg mb-4" />
-                )} */}
-                <h3 className="text-2xl font-semibold text-gray-800 mb-2">{project?.title}</h3>
-                <p className="text-gray-600 mb-4">{project?.description}</p>
+            <div className="relative z-10 flex flex-col h-full justify-between">
+                <div>
+                    <h3 className="text-2xl font-semibold text-gray-800 mb-2 text-center">{project?.title}</h3>
+                    <p className="text-gray-600 mb-4 text-center">{project?.description}</p>
+                </div>
                 <a
                     href={project?.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block bg-gradient-to-r from-purple-500 to-indigo-600 text-white px-4 py-2 rounded-full hover:bg-gray-900 transition-colors duration-300"
+                    className="mt-auto bg-gradient-to-r from-purple-500 to-indigo-600 text-white px-4 py-2 rounded-full w-36 mx-auto hover:bg-gray-900 transition-colors duration-300 text-center"
                 >
                     {project?.cta || "View"}
                 </a>
@@ -34,6 +32,60 @@ const ProjectCard = ({ project }) => {
         </motion.div>
     );
 };
+
+
+
+// const ProjectCard = ({ project }) => {
+//     return (
+//         <motion.div
+//             whileHover={{ rotateY: 10, scale: 1.05 }}
+//             className="relative p-6 bg-gradient-to-r from-pink-100 to-orange-50 rounded-lg shadow-lg transition-transform duration-300 max-w-sm w-full md:w-80 min-h-64 mx-auto flex flex-col justify-between"
+//         >
+//             <div className="relative z-10 flex flex-col h-full justify-between">
+//                 <div>
+//                     <h3 className="text-2xl font-semibold text-gray-800 mb-2">{project?.title}</h3>
+//                     <p className="text-gray-600 mb-4">{project?.description}</p>
+//                 </div>
+//                 <a
+//                     href={project?.link}
+//                     target="_blank"
+//                     rel="noopener noreferrer"
+//                     className="mt-auto inline-block bg-gradient-to-r from-purple-500 to-indigo-600 text-white px-4 py-2 rounded-full hover:bg-gray-900 transition-colors duration-300"
+//                 >
+//                     {project?.cta || "View"}
+//                 </a>
+//             </div>
+//         </motion.div>
+//     );
+// };
+
+
+
+// const ProjectCard = ({ project }) => {
+//     return (
+//         <motion.div
+//             whileHover={{ rotateY: 10, scale: 1.05 }}
+//             className="relative p-6 bg-gradient-to-r from-pink-100 to-orange-50 rounded-lg shadow-lg transition-transform duration-300 max-w-sm mx-auto"
+//         >
+//             <div className="absolute inset-0 bg-white rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+//             <div className="relative z-10">
+//                 {/* {project?.image && (
+//                     <img src={project.image} alt={project.title} className="w-full h-40 object-cover rounded-lg mb-4" />
+//                 )} */}
+//                 <h3 className="text-2xl font-semibold text-gray-800 mb-2">{project?.title}</h3>
+//                 <p className="text-gray-600 mb-4">{project?.description}</p>
+//                 <a
+//                     href={project?.link}
+//                     target="_blank"
+//                     rel="noopener noreferrer"
+//                     className="inline-block bg-gradient-to-r from-purple-500 to-indigo-600 text-white px-4 py-2 rounded-full hover:bg-gray-900 transition-colors duration-300"
+//                 >
+//                     {project?.cta || "View"}
+//                 </a>
+//             </div>
+//         </motion.div>
+//     );
+// };
 
 // Add PropTypes validation for 'project'
 ProjectCard.propTypes = {
