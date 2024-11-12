@@ -61,8 +61,8 @@ const About = () => {
                     <div className="bg-gradient-to-r from-pink-100 to-orange-50 text-gray-800 p-6 rounded-lg shadow-lg">
                         <h3 className="text-2xl font-semibold mb-4">Skills</h3>
                         <div className="flex flex-wrap gap-2">
-                            {["Go", "MySQL", "Google Play Billing API", "Cloud Technologies"].map(skill => (
-                                <span key={skill} className="bg-indigo-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            {["Go", "MySQL", "React", "Python", "Google Play Billing API", "GCP", "AWS", "Redis", "Kubernetes", "Elasticsearch"].map(skill => (
+                                <span key={skill} className="bg-gradient-to-r from-purple-500 to-indigo-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
                                     {skill}
                                 </span>
                             ))}
