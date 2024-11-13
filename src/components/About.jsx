@@ -32,6 +32,25 @@
 
 import { motion } from 'framer-motion';
 
+
+function calculateYearsBetweenDates(startDate, endDate = new Date()) {
+    const start = new Date(startDate);
+    const end = new Date(endDate);
+    let yearsDifference = end.getFullYear() - start.getFullYear();
+    let monthsDifference = end.getMonth() - start.getMonth();
+
+    // Adjust if the end month is before the start month
+    if (monthsDifference < 0) {
+        yearsDifference -= 1;
+        monthsDifference += 12;
+    }
+    // Calculate the total years with decimal months
+    const totalYears = yearsDifference + monthsDifference / 12;
+    // Round to the nearest half year
+    const roundedYears = Math.round(totalYears * 2) / 2;
+    return roundedYears;
+}
+
 const About = () => {
     return (
         <section id="about" className="py-20 bg-gradient-to-r from-purple-500 to-indigo-600 text-center">
@@ -50,10 +69,16 @@ const About = () => {
                         <div className="relative border-l border-gray-300">
                             {/* Example of a timeline item */}
                             <div className="mb-4">
-                                <div className="absolute left-[-12px] top-0 bg-indigo-600 h-4 w-4 rounded-full"></div>
+                                <div className="absolute left-[-8px] top-0 bg-indigo-600 h-4 w-4 rounded-full"></div>
                                 <h4 className="font-bold">Backend Engineer</h4>
-                                <p className="text-gray-600">Bobble AI | 3.5 Years</p>
-                                <p>Software Developer at Bobble.ai | Server-Side Engineering | Golang & React</p>
+                                <p className="text-gray-600">Bobble AI | (2022 - Present) {calculateYearsBetweenDates('2021-06-01')} Years</p>
+                                <p>Software Developer at Bobble.ai | Server-Side Engineering | Golang, Python & React</p>
+                            </div>
+                            <div className="mb-4">
+                                <div className="absolute left-[-8px] top-[120px] bg-indigo-600 h-4 w-4 rounded-full"></div>
+                                <h4 className="font-bold">Software Development Intern</h4>
+                                <p className="text-gray-600">HighRadius | 6 Months</p>
+                                <p>Software Development Intern at HighRadius | React, Python & Java</p>
                             </div>
                             {/* Repeat the above div for more timeline items */}
                         </div>
